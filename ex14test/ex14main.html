@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <div id="app">
+        직급 입력 <input type="text" v-model="jik">
+        <button @click="onClick">확인</button>
+        <br><br>
+        <table v-if="jikdatas.length > 0">
+            <tr>
+                <th>사번</th><th>이름</th><th>부서명</th><th>직급</th><th>연봉</th>
+            </tr>
+            <tr v-for="(jikwon, index) in jikdatas" :key="index">
+                <td>{{jikwon.no}}</td>
+                <td>{{jikwon.name}}</td>
+                <td>{{jikwon.bname}}</td>
+                <td>{{jikwon.jik}}</td>
+                <td>{{jikwon.pay}}</td>
+            </tr>
+        </table>
+            인원수 : {{count}}
+            연봉 평균 : {{averpay}}
+
+    </div>
+    <script src="ex14test.js"></script>
+</body>
+</html>
